@@ -122,7 +122,23 @@ function showStats(){
 
  out.innerHTML=html;
 }
+function resetSales() {
+  const pwd = prompt("Mot de passe administrateur");
 
+  if (pwd !== "LeStClair2026") {
+    alert("Mot de passe incorrect");
+    return;
+  }
+
+  if (!confirm("Supprimer toutes les ventes ?")) {
+    return;
+  }
+
+  localStorage.removeItem('sales');
+  sales = [];
+
+  alert("Ventes réinitialisées");
+}
 function exportJSON(){
  const blob=new Blob([JSON.stringify({products,sales},null,2)],{type:'application/json'});
  const a=document.createElement('a');
