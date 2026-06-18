@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barnum Le St Clair</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h1>Barnum Le St Clair</h1>
+
+<div id="products" class="grid"></div>
+
+<h2>Ticket</h2>
+<div id="ticket"></div>
+<h2>Total : <span id="total">0.00</span> €</h2>
+
+<select id="payment">
+<option>Espèces</option>
+<option>Carte</option>
+<option>Chèque</option>
+</select>
+
+<input id="received" type="number" placeholder="Montant reçu">
+<p>Rendu : <span id="change">0.00</span> €</p>
+
+<button onclick="saveSale()">Encaisser</button>
+<button onclick="clearTicket()">Vider Ticket</button>
+
+<hr>
+
+<button onclick="adminLogin()">Administration</button>
+<button onclick="showStats()">Statistiques</button>
+<button onclick="exportJSON()">Export JSON</button>
+<button onclick="exportCSV()">Export CSV</button>
+
+<div id="output"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
