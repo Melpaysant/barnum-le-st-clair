@@ -18,7 +18,6 @@ let sales=JSON.parse(localStorage.getItem('sales'))||[];
 let ticket=[];
 
 function saveData(){
- localStorage.setItem('products',JSON.stringify(products));
  localStorage.setItem('sales',JSON.stringify(sales));
 }
 
@@ -143,3 +142,8 @@ function exportCSV(){
 
 renderProducts();
 renderTicket();
+
+function resetProducts(){
+  localStorage.removeItem('products');
+  location.reload();
+}
