@@ -4,14 +4,15 @@ const PASSWORD='LeStClair2026';
 let products=JSON.parse(localStorage.getItem('products'))||[
 {name:'Pelforth 25cl',price:3},
 {name:'Pelforth 50cl',price:5},
-{name:'Vin',price:4},
-{name:'Eau',price:1},
-{name:'Café',price:1},
-{name:'Bretzel',price:2},
-{name:'Crémant',price:5},
-{name:'Kir',price:4},
-{name:'Jus',price:2},
-{name:'Ice Tea',price:2}
+{name:'Despé Sunlight 25cl',price:4},
+{name:'Despé Sunlight 50cl',price:7},
+{name:'3 Monts Chapelle 25cl',price:3.50},
+{name:'3 Monts Chapelle 50cl',price:6},
+{name:'Vin blanc',price:2.50},
+{name:'Vin rosé',price:2.50},
+{name:'Punch',price:3},
+{name:'Soft',price:3},
+ {name:'Eau',price:1},
 ];
 
 let sales=JSON.parse(localStorage.getItem('sales'))||[];
