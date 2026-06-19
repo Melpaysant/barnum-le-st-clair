@@ -122,10 +122,12 @@ function showStats(){
 
  out.innerHTML=html;
 }
+
 function resetSales() {
+
   const pwd = prompt("Mot de passe administrateur");
 
-  if (pwd !== "LeStClair2026") {
+  if (pwd !== PASSWORD) {
     alert("Mot de passe incorrect");
     return;
   }
@@ -138,7 +140,9 @@ function resetSales() {
   sales = [];
 
   alert("Ventes réinitialisées");
+  location.reload();
 }
+
 function exportJSON(){
  const blob=new Blob([JSON.stringify({products,sales},null,2)],{type:'application/json'});
  const a=document.createElement('a');
