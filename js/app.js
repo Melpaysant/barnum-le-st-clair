@@ -11,7 +11,7 @@ let products=JSON.parse(localStorage.getItem('products'))||[
 {name:'Vin blanc ou rosé',price:2.50},
 {name:'Punch',price:3},
 {name:'Soft',price:3},
- {name:'Eau',price:1},
+{name:'Eau',price:1},
 ];
 
 let sales=JSON.parse(localStorage.getItem('sales'))||[];
