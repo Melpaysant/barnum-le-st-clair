@@ -1,7 +1,7 @@
 
 const PASSWORD='LeStClair2026';
 
-let products=JSON.parse(localStorage.getItem('products'))||[
+let products=[
 {name:'Pelforth 25cl',price:3},
 {name:'Pelforth 50cl',price:5},
 {name:'Despé Sunlight 25cl',price:4},
