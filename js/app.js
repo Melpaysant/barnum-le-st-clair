@@ -76,6 +76,25 @@ function saveSale(){
  clearTicket();
 }
 
+function resetProducts() {
+
+  const pwd = prompt("Mot de passe administrateur");
+
+  if (pwd !== PASSWORD) {
+    alert("Mot de passe incorrect");
+    return;
+  }
+
+  if (!confirm("Réinitialiser les produits ?")) {
+    return;
+  }
+
+  localStorage.removeItem('products');
+
+  alert("Produits réinitialisés");
+  location.reload();
+}
+
 function clearTicket(){
  ticket=[];
  document.getElementById('received').value='';
