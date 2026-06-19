@@ -2,8 +2,8 @@
 const PASSWORD='LeStClair2026';
 
 let products=JSON.parse(localStorage.getItem('products'))||[
-{name:'Bière',price:3},
-{name:'Coca',price:2},
+{name:'Pelforth 25cl',price:3},
+{name:'Pelforth 50cl',price:5},
 {name:'Vin',price:4},
 {name:'Eau',price:1},
 {name:'Café',price:1},
