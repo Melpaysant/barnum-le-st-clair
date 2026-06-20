@@ -5,3 +5,64 @@ h1{color:#0056d6}
 button{background:#0056d6;color:white;border:none;padding:15px;border-radius:8px;cursor:pointer}
 input,select{width:100%;padding:10px;margin:5px 0}
 .product{font-size:16px}
+
+h1{
+    color:#0056d6;
+    font-size:22px;
+    margin:5px 0;
+    text-align:center;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    max-width:1000px;
+    margin:auto;
+    padding:8px;
+    background:#eef5ff;
+}
+
+#payment{
+    font-size:22px;
+    padding:15px;
+    font-weight:bold;
+}
+
+#received{
+    font-size:24px;
+    padding:15px;
+    font-weight:bold;
+}
+
+.change-box{
+    font-size:32px;
+    font-weight:bold;
+    text-align:center;
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    margin:10px 0;
+    border:2px solid #0056d6;
+}
+
+.validate-btn{
+    width:100%;
+    font-size:30px;
+    font-weight:bold;
+    padding:22px;
+    margin-top:10px;
+    background:#28a745;
+    color:white;
+    border:none;
+    border-radius:10px;
+}
+
+.clear-btn{
+    width:100%;
+    font-size:18px;
+    padding:14px;
+    margin-top:8px;
+    background:#dc3545;
+    color:white;
+    border:none;
+    border-radius:10px;
+}
