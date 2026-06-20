@@ -22,15 +22,15 @@ body{
 }
 
 #payment{
-    font-size:22px;
-    padding:15px;
-    font-weight:bold;
+    font-size:18px;
+    padding:8px;
+    height:50px;
 }
 
 #received{
-    font-size:24px;
-    padding:15px;
-    font-weight:bold;
+    font-size:18px;
+    padding:8px;
+    height:50px;
 }
 
 .change-box{
@@ -68,20 +68,18 @@ body{
 }
 
 .ticket-box{
-    font-size:18px;
-    padding:8px;
-    margin:5px 0;
-    background:white;
-    border-radius:8px;
+    min-height:0;
+    padding:2px;
+    margin:2px 0;
 }
 
 .total-box{
-    font-size:32px;
+    font-size:18px;
     font-weight:bold;
     text-align:center;
-    padding:10px;
-    margin:5px 0;
-    background:#0056d6;
+    padding:3px;
+    margin:2px 0;
+    background:#ff7a00;
     color:white;
-    border-radius:10px;
+    border-radius:6px;
 }
