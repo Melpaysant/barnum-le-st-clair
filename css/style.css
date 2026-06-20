@@ -87,11 +87,11 @@ body{
 
 .product{
     position:relative;
-    min-height:55px;
+    min-height:65px;
     font-size:18px;
     font-weight:600;
     text-align:left;
-    padding:6px;
+    padding:8px;
 }
 
 .product-name{
