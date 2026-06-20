@@ -34,13 +34,13 @@ body{
 }
 
 .change-box{
-    font-size:32px;
+    font-size:24px;
     font-weight:bold;
     text-align:center;
     background:white;
-    padding:15px;
+    padding:10px;
     border-radius:10px;
-    margin:10px 0;
+    margin:6px 0;
     border:2px solid #0056d6;
 }
 
@@ -58,13 +58,9 @@ body{
 
 .clear-btn{
     width:100%;
-    font-size:18px;
-    padding:14px;
-    margin-top:8px;
-    background:#dc3545;
-    color:white;
-    border:none;
-    border-radius:10px;
+    font-size:16px;
+    padding:10px;
+    margin-top:5px;
 }
 
 .ticket-box{
@@ -74,12 +70,12 @@ body{
 }
 
 .total-box{
-    font-size:18px;
+    font-size:26px;
     font-weight:bold;
     text-align:center;
-    padding:3px;
-    margin:2px 0;
+    padding:6px;
+    margin:4px 0;
     background:#ff7a00;
     color:white;
-    border-radius:6px;
+    border-radius:8px;
 }
