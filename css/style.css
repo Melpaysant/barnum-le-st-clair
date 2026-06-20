@@ -66,3 +66,22 @@ body{
     border:none;
     border-radius:10px;
 }
+
+.ticket-box{
+    font-size:18px;
+    padding:8px;
+    margin:5px 0;
+    background:white;
+    border-radius:8px;
+}
+
+.total-box{
+    font-size:32px;
+    font-weight:bold;
+    text-align:center;
+    padding:10px;
+    margin:5px 0;
+    background:#0056d6;
+    color:white;
+    border-radius:10px;
+}
