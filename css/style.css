@@ -5,7 +5,10 @@ h1{color:#0056d6}
 button{background:#0056d6;color:white;border:none;padding:15px;border-radius:8px;cursor:pointer}
 input,select{width:100%;padding:10px;margin:5px 0}
 .product{
-    font-size:17px;
+    font-size:18px;
+    font-weight:600;
+    line-height:1.2;
+    padding:10px;
 }
 
 h1{
