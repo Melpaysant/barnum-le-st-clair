@@ -96,9 +96,16 @@ function resetProducts() {
 }
 
 function clearTicket(){
- ticket=[];
- document.getElementById('received').value='';
- renderTicket();
+
+  if(!confirm("Vider le ticket en cours ?")){
+    return;
+  }
+
+  ticket = [];
+
+  document.getElementById('received').value = '';
+
+  renderTicket();
 }
 
 function adminLogin(){
