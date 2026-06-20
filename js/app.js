@@ -28,7 +28,10 @@ function renderProducts(){
  products.forEach(p=>{
    const b=document.createElement('button');
    b.className='product';
-   b.innerHTML=`${p.name}<br>${p.price} €`;
+   b.innerHTML=`
+<div class="product-name">${p.name}</div>
+<div class="product-price">${p.price} €</div>
+`;
    b.onclick=()=>addProduct(p);
    div.appendChild(b);
  });
