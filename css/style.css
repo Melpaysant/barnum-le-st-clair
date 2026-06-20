@@ -84,3 +84,24 @@ body{
     color:white;
     border-radius:8px;
 }
+
+.product{
+    position:relative;
+    min-height:80px;
+    font-size:18px;
+    font-weight:600;
+    text-align:left;
+    padding:10px;
+}
+
+.product-name{
+    padding-right:40px;
+}
+
+.product-price{
+    position:absolute;
+    bottom:8px;
+    right:8px;
+    font-size:16px;
+    font-weight:bold;
+}
