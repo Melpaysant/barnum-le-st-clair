@@ -22,10 +22,16 @@
 </select>
 
 <input id="received" type="number" placeholder="Montant reçu">
-<p>Rendu : <span id="change">0.00</span> €</p>
+<div class="change-box">
+    RENDU : <span id="change">0.00</span> €
+</div>
 
-<button onclick="saveSale()">Encaisser</button>
-<button onclick="clearTicket()">Vider Ticket</button>
+<button class="validate-btn" onclick="saveSale()">
+    ENCAISSER
+</button>
+<button class="clear-btn" onclick="clearTicket()">
+    VIDER TICKET
+</button>
 
 <hr>
 
