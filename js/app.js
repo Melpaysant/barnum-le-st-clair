@@ -54,16 +54,20 @@ function renderTicket(){
  div.innerHTML='';
  ticket.forEach(i=>{
    total+=i.qty*i.price;
-   div.innerHTML+=`${i.qty} x ${i.name} = ${i.qty*i.price} €<br>`;
+   div.innerHTML += `${i.qty} x ${i.name} = ${(i.qty * i.price).toFixed(2).replace('.', ',')} €<br>`;
  });
- document.getElementById('total').textContent=total.toFixed(2);
+ document.getElementById('total').textContent =
+    total.toFixed(2).replace('.', ',');
  updateChange();
 }
 
 function updateChange(){
  const total=parseFloat(document.getElementById('total').textContent)||0;
  const rec=parseFloat(document.getElementById('received').value)||0;
- document.getElementById('change').textContent=Math.max(rec-total,0).toFixed(2);
+ document.getElementById('change').textContent =
+    Math.max(rec-total,0)
+      .toFixed(2)
+      .replace('.', ',');
 }
 
 document.addEventListener('input',e=>{
