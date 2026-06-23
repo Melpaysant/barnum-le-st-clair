@@ -73,6 +73,17 @@ body{
     margin-top:5px;
 }
 
+.cancel-line-btn{
+    width:100%;
+    font-size:16px;
+    padding:10px;
+    margin-top:5px;
+    background:#f0ad4e;
+    color:white;
+    border:none;
+    border-radius:8px;
+}
+
 .ticket-box{
     min-height:0;
     padding:2px;
