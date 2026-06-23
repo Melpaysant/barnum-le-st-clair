@@ -102,6 +102,23 @@ function resetProducts() {
   location.reload();
 }
 
+function removeLastItem(){
+
+    if(ticket.length === 0){
+        return;
+    }
+
+    const lastItem = ticket[ticket.length - 1];
+
+    if(lastItem.qty > 1){
+        lastItem.qty--;
+    } else {
+        ticket.pop();
+    }
+
+    renderTicket();
+}
+
 function clearTicket(){
 
   if(!confirm("Vider le ticket en cours ?")){
