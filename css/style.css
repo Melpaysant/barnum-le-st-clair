@@ -1,14 +1,19 @@
 
 body{font-family:Arial,sans-serif;max-width:1000px;margin:auto;padding:20px;background:#eef5ff}
 h1{color:#0056d6}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:4px;
+}
 button{background:#0056d6;color:white;border:none;padding:15px;border-radius:8px;cursor:pointer}
 input,select{width:100%;padding:10px;margin:5px 0}
+
 .product{
-    font-size:18px;
+    min-height:60px;
+    font-size:15px;
     font-weight:600;
-    line-height:1.2;
-    padding:10px;
+    padding:5px;
 }
 
 h1{
