@@ -1,23 +1,28 @@
 
 const PASSWORD='LeStClair2026';
 
-let products=JSON.parse(localStorage.getItem('products'))||[
-{name:'Bière',price:3},
-{name:'Coca',price:2},
-{name:'Vin',price:4},
-{name:'Eau',price:1},
-{name:'Café',price:1},
-{name:'Bretzel',price:2},
-{name:'Crémant',price:5},
-{name:'Kir',price:4},
-{name:'Jus',price:2},
-{name:'Ice Tea',price:2}
+let products=[
+{name:'Pelforth 30cl',price:3.50},
+{name:'Despé 30cl',price:4.60},
+{name:'3 Monts 30cl',price:4.00},
+{name:'Pelforth 50cl',price:5.40},
+{name:'Despé 50cl',price:7.20},
+{name:'3 Monts 50cl',price:6.60},
+{name:'Pelforth 1,5L',price:16.50},
+{name:'Despé 1,5L',price:21.50},
+{name:'3 Monts 1,5L',price:20.00},
+{name:'Vin 15cl',price:3.50},
+{name:'Punch 15cl',price:3.00},
+{name:'Sangria 15cl',price:3.00},
+{name:'Soft',price:3.00},
+ {name:'Eau 50cl',price:1.00},
 ];
 
 let sales=JSON.parse(localStorage.getItem('sales'))||[];
 let ticket=[];
 
 function saveData(){
+ localStorage.setItem('products',JSON.stringify(products));
  localStorage.setItem('sales',JSON.stringify(sales));
 }
 
@@ -27,7 +32,10 @@ function renderProducts(){
  products.forEach(p=>{
    const b=document.createElement('button');
    b.className='product';
-   b.innerHTML=`${p.name}<br>${p.price} €`;
+   b.innerHTML=`
+<div class="product-name">${p.name}</div>
+<div class="product-price">${p.price} €</div>
+`;
    b.onclick=()=>addProduct(p);
    div.appendChild(b);
  });
@@ -46,16 +54,20 @@ function renderTicket(){
  div.innerHTML='';
  ticket.forEach(i=>{
    total+=i.qty*i.price;
-   div.innerHTML+=`${i.qty} x ${i.name} = ${i.qty*i.price} €<br>`;
+   div.innerHTML += `${i.qty} x ${i.name} = ${(i.qty * i.price).toFixed(2).replace('.', ',')} €<br>`;
  });
- document.getElementById('total').textContent=total.toFixed(2);
+ document.getElementById('total').textContent =
+    total.toFixed(2).replace('.', ',');
  updateChange();
 }
 
 function updateChange(){
  const total=parseFloat(document.getElementById('total').textContent)||0;
  const rec=parseFloat(document.getElementById('received').value)||0;
- document.getElementById('change').textContent=Math.max(rec-total,0).toFixed(2);
+ document.getElementById('change').textContent =
+    Math.max(rec-total,0)
+      .toFixed(2)
+      .replace('.', ',');
 }
 
 document.addEventListener('input',e=>{
@@ -75,10 +87,53 @@ function saveSale(){
  clearTicket();
 }
 
+function resetProducts() {
+
+  const pwd = prompt("Mot de passe administrateur");
+
+  if (pwd !== PASSWORD) {
+    alert("Mot de passe incorrect");
+    return;
+  }
+
+  if (!confirm("Réinitialiser les produits ?")) {
+    return;
+  }
+
+  localStorage.removeItem('products');
+
+  alert("Produits réinitialisés");
+  location.reload();
+}
+
+function removeLastItem(){
+
+    if(ticket.length === 0){
+        return;
+    }
+
+    const lastItem = ticket[ticket.length - 1];
+
+    if(lastItem.qty > 1){
+        lastItem.qty--;
+    } else {
+        ticket.pop();
+    }
+
+    renderTicket();
+}
+
 function clearTicket(){
- ticket=[];
- document.getElementById('received').value='';
- renderTicket();
+
+  if(!confirm("Vider le ticket en cours ?")){
+    return;
+  }
+
+  ticket = [];
+
+  document.getElementById('received').value = '';
+
+  renderTicket();
 }
 
 function adminLogin(){
@@ -122,6 +177,26 @@ function showStats(){
  out.innerHTML=html;
 }
 
+function resetSales() {
+
+  const pwd = prompt("Mot de passe administrateur");
+
+  if (pwd !== PASSWORD) {
+    alert("Mot de passe incorrect");
+    return;
+  }
+
+  if (!confirm("Supprimer toutes les ventes ?")) {
+    return;
+  }
+
+  localStorage.removeItem('sales');
+  sales = [];
+
+  alert("Ventes réinitialisées");
+  location.reload();
+}
+
 function exportJSON(){
  const blob=new Blob([JSON.stringify({products,sales},null,2)],{type:'application/json'});
  const a=document.createElement('a');
@@ -142,28 +217,3 @@ function exportCSV(){
 
 renderProducts();
 renderTicket();
-
-function resetProducts(){
-  localStorage.removeItem('products');
-  location.reload();
-}
-
-function setPayment(mode){
-
-    document.getElementById("payment").value = mode;
-
-    document
-        .querySelectorAll(".payment-btn")
-        .forEach(btn => btn.classList.remove("active"));
-
-    if(mode==="Espèces")
-        document.getElementById("btnCash").classList.add("active");
-
-    if(mode==="Carte")
-        document.getElementById("btnCard").classList.add("active");
-
-    if(mode==="Partagé")
-        document.getElementById("btnShared").classList.add("active");
-
-    changePaymentMode();
-}
