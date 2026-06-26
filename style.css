@@ -5,3 +5,24 @@ h1{color:#0056d6}
 button{background:#0056d6;color:white;border:none;padding:15px;border-radius:8px;cursor:pointer}
 input,select{width:100%;padding:10px;margin:5px 0}
 .product{font-size:16px}
+
+.payment-buttons{
+    display:flex;
+    gap:6px;
+    margin:8px 0;
+}
+
+.payment-btn{
+    flex:1;
+    padding:12px;
+    font-size:17px;
+    font-weight:bold;
+    border:none;
+    border-radius:8px;
+    background:#0056d6;
+    color:white;
+}
+
+.payment-btn.active{
+    background:#28a745;
+}
