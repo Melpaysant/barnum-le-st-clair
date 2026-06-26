@@ -17,10 +17,30 @@
     TOTAL : <span id="total">0.00</span> €
 </div>
 
-<select id="payment">
-<option>Espèces</option>
-<option>Carte</option>
-</select>
+<div class="payment-buttons">
+
+    <button id="btnCash"
+            class="payment-btn active"
+            onclick="setPayment('Espèces')">
+        Espèces
+    </button>
+
+    <button id="btnCard"
+            class="payment-btn"
+            onclick="setPayment('Carte')">
+        Carte
+    </button>
+
+    <button id="btnShared"
+            class="payment-btn"
+            onclick="setPayment('Partagé')">
+        Partagé
+    </button>
+
+</div>
+
+<input type="hidden" id="payment" value="Espèces">
+
 
 <input id="received" type="number" placeholder="Montant reçu">
 <div class="change-box">
