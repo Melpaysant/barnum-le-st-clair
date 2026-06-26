@@ -77,13 +77,6 @@ document.addEventListener('input',e=>{
 });
 
 function saveSale(){
- if(ticket.length===0)return;
- sales.push({
-   date:new Date().toLocaleString(),
-   payment:document.getElementById('payment').value,
-   total:parseFloat(document.getElementById('total').textContent),
-   items:ticket
- });
  saveData();
  alert('Vente enregistrée');
  clearTicket();
@@ -127,15 +120,23 @@ function removeLastItem(){
 
 function clearTicket(){
 
-  if(!confirm("Vider le ticket en cours ?")){
-    return;
-  }
+    ticket = [];
 
-  ticket = [];
+    document.getElementById("received").value = "";
+    document.getElementById("change").textContent = "0,00";
 
-  document.getElementById('received').value = '';
+    const cash = document.getElementById("cashAmount");
+    if(cash) cash.value = "";
 
-  renderTicket();
+    const card = document.getElementById("cardAmount");
+    if(card) card.value = "";
+
+    document.getElementById("payment").value = "Espèces";
+
+    setPayment("Espèces");
+
+    renderTicket();
+
 }
 
 function adminLogin(){
