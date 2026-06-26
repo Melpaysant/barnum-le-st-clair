@@ -224,6 +224,10 @@ function setPayment(mode){
     document.querySelectorAll(".payment-btn")
         .forEach(btn => btn.classList.remove("active"));
 
+    document.getElementById("btnCash").classList.remove("active");
+    document.getElementById("btnCard").classList.remove("active");
+    document.getElementById("btnShared").classList.remove("active");
+
     if(mode==="Espèces")
         document.getElementById("btnCash").classList.add("active");
 
@@ -234,19 +238,44 @@ function setPayment(mode){
         document.getElementById("btnShared").classList.add("active");
 
     changePaymentMode();
+
 }
+
 
 function changePaymentMode(){
 
-    const mode=document.getElementById("payment").value;
+    const mode = document.getElementById("payment").value;
 
-    if(mode==="Partagé"){
-        document.getElementById("sharedPayment").style.display="block";
-    }else{
-        document.getElementById("sharedPayment").style.display="none";
+    const shared = document.getElementById("sharedPayment");
+    const received = document.getElementById("received");
+    const changeBox = document.querySelector(".change-box");
+
+    if(mode === "Espèces"){
+
+        received.style.display = "block";
+        changeBox.style.display = "block";
+        shared.style.display = "none";
+
+    }
+
+    if(mode === "Carte"){
+
+        received.style.display = "none";
+        changeBox.style.display = "none";
+        shared.style.display = "none";
+
+    }
+
+    if(mode === "Partagé"){
+
+        received.style.display = "none";
+        changeBox.style.display = "none";
+        shared.style.display = "block";
+
     }
 
 }
+
 
 function calculateShared(){
 
@@ -270,3 +299,5 @@ function calculateShared(){
 
 renderProducts();
 renderTicket();
+changePaymentMode();
+
