@@ -139,3 +139,26 @@ body{
     box-shadow:0 0 10px rgba(0,0,0,0.35);
 }
 
+#sharedPayment{
+    margin-top:10px;
+}
+
+#sharedPayment label{
+    font-weight:bold;
+    display:block;
+    margin-top:8px;
+}
+
+#cashAmount,
+#cardAmount{
+    width:100%;
+    font-size:22px;
+    padding:10px;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+
+#cardAmount{
+    background:#f2f2f2;
+}
+
