@@ -41,6 +41,26 @@
 
 <input type="hidden" id="payment" value="Espèces">
 
+<div id="sharedPayment" style="display:none; margin-top:10px;">
+
+    <label>Montant en espèces</label>
+
+    <input
+        id="cashAmount"
+        type="number"
+        step="0.01"
+        placeholder="0,00"
+        oninput="calculateShared()">
+
+    <label>Montant en carte</label>
+
+    <input
+        id="cardAmount"
+        type="text"
+        readonly>
+
+</div>
+
 
 <input id="received" type="number" placeholder="Montant reçu">
 <div class="change-box">
