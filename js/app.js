@@ -297,6 +297,24 @@ function calculateShared(){
 
 }
 
+function resetTicket(){
+
+    ticket = [];
+
+    document.getElementById("received").value = "";
+    document.getElementById("change").textContent = "0,00";
+
+    const cash = document.getElementById("cashAmount");
+    if(cash) cash.value = "";
+
+    const card = document.getElementById("cardAmount");
+    if(card) card.value = "";
+
+    setPayment("Espèces");
+
+    renderTicket();
+}
+
 
 renderProducts();
 renderTicket();
