@@ -79,7 +79,7 @@ document.addEventListener('input',e=>{
 function saveSale(){
  saveData();
  alert('Vente enregistrée');
- clearTicket();
+ resetTicket();
 }
 
 function resetProducts() {
