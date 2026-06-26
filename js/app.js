@@ -77,9 +77,45 @@ document.addEventListener('input',e=>{
 });
 
 function saveSale(){
- saveData();
- alert('Vente enregistrée');
- resetTicket();
+
+    if(ticket.length===0) return;
+
+    let payment;
+
+    if(document.getElementById("payment").value==="Partagé"){
+
+        payment={
+            mode:"Partagé",
+            cash:parseFloat(document.getElementById("cashAmount").value.replace(",", "."))||0,
+            card:parseFloat(document.getElementById("cardAmount").value.replace(",", "."))||0
+        };
+
+    }else{
+
+        payment=document.getElementById("payment").value;
+
+    }
+
+    sales.push({
+
+        date:new Date().toLocaleString(),
+
+        payment:payment,
+
+        total:parseFloat(
+            document.getElementById("total").textContent.replace(",",".")
+        ),
+
+        items:ticket
+
+    });
+
+    saveData();
+
+    alert("Vente enregistrée");
+
+    resetTicket();
+
 }
 
 function resetProducts() {
@@ -165,10 +201,26 @@ function showStats(){
  const pay={};
 
  sales.forEach(s=>{
-   ca+=s.total;
-   pay[s.payment]=(pay[s.payment]||0)+s.total;
-   s.items.forEach(i=>prod[i.name]=(prod[i.name]||0)+i.qty);
- });
+
+    ca += s.total;
+
+    if(typeof s.payment === "string"){
+
+        pay[s.payment] = (pay[s.payment] || 0) + s.total;
+
+    }else{
+
+        pay["Espèces"] = (pay["Espèces"] || 0) + s.payment.cash;
+
+        pay["Carte"] = (pay["Carte"] || 0) + s.payment.card;
+
+    }
+
+    s.items.forEach(i=>{
+        prod[i.name] = (prod[i.name] || 0) + i.qty;
+    });
+
+});
 
  html+=`<p>CA Total : ${ca.toFixed(2)} €</p>`;
  html+='<h3>Produits</h3>';
