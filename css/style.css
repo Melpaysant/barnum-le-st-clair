@@ -121,3 +121,21 @@ body{
     font-size:16px;
     font-weight:bold;
 }
+
+#btnCash{
+    background:#28a745;
+}
+
+#btnCard{
+    background:#0056d6;
+}
+
+#btnShared{
+    background:#ff9800;
+}
+
+.payment-btn.active{
+    border:3px solid white;
+    box-shadow:0 0 10px rgba(0,0,0,0.35);
+}
+
