@@ -62,7 +62,9 @@ function renderTicket(){
 }
 
 function updateChange(){
- const total=parseFloat(document.getElementById('total').textContent)||0;
+ const total=parseFloat(
+    document.getElementById('total').textContent.replace(",", ".")
+)||0;
  const rec=parseFloat(document.getElementById('received').value)||0;
  document.getElementById('change').textContent =
     Math.max(rec-total,0)
