@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Barnum Le St Clair</title>
-<link rel="stylesheet" href="css/style.css?v=15">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -17,50 +17,10 @@
     TOTAL : <span id="total">0.00</span> €
 </div>
 
-<div class="payment-buttons">
-
-    <button id="btnCash"
-            class="payment-btn active"
-            onclick="setPayment('Espèces')">
-        Espèces
-    </button>
-
-    <button id="btnCard"
-            class="payment-btn"
-            onclick="setPayment('Carte')">
-        Carte
-    </button>
-
-    <button id="btnShared"
-            class="payment-btn"
-            onclick="setPayment('Partagé')">
-        Partagé
-    </button>
-
-</div>
-
-<input type="hidden" id="payment" value="Espèces">
-
-<div id="sharedPayment" style="display:none; margin-top:10px;">
-
-    <label>Montant en espèces</label>
-
-    <input
-        id="cashAmount"
-        type="number"
-        step="0.01"
-        placeholder="0,00"
-        oninput="calculateShared()">
-
-    <label>Montant en carte</label>
-
-    <input
-        id="cardAmount"
-        type="text"
-        readonly>
-
-</div>
-
+<select id="payment">
+<option>Espèces</option>
+<option>Carte</option>
+</select>
 
 <input id="received" type="number" placeholder="Montant reçu">
 <div class="change-box">
@@ -85,6 +45,6 @@
   
 <div id="output"></div>
 
-<script src="js/app.js?v=15"></script>
+<script src="js/app.js?v=10"></script>
 </body>
 </html>
