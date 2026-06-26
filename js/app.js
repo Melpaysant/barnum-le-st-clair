@@ -215,5 +215,56 @@ function exportCSV(){
  a.click();
 }
 
+function setPayment(mode){
+
+    document.getElementById("payment").value = mode;
+
+    document.querySelectorAll(".payment-btn")
+        .forEach(btn => btn.classList.remove("active"));
+
+    if(mode==="Espèces")
+        document.getElementById("btnCash").classList.add("active");
+
+    if(mode==="Carte")
+        document.getElementById("btnCard").classList.add("active");
+
+    if(mode==="Partagé")
+        document.getElementById("btnShared").classList.add("active");
+
+    changePaymentMode();
+}
+
+function changePaymentMode(){
+
+    const mode=document.getElementById("payment").value;
+
+    if(mode==="Partagé"){
+        document.getElementById("sharedPayment").style.display="block";
+    }else{
+        document.getElementById("sharedPayment").style.display="none";
+    }
+
+}
+
+function calculateShared(){
+
+    const total =
+        parseFloat(document.getElementById("total").textContent.replace(",", ".")) || 0;
+
+    let cash =
+        parseFloat(document.getElementById("cashAmount").value.replace(",", ".")) || 0;
+
+    if(cash < 0) cash = 0;
+
+    if(cash > total) cash = total;
+
+    const card = total - cash;
+
+    document.getElementById("cardAmount").value =
+        card.toFixed(2).replace(".", ",");
+
+}
+
+
 renderProducts();
 renderTicket();
