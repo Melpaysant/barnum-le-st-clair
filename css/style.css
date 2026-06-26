@@ -1,125 +1,97 @@
+/* ---------------------- */
+/* GÉNÉRAL                */
+/* ---------------------- */
 
-body{font-family:Arial,sans-serif;max-width:1000px;margin:auto;padding:20px;background:#eef5ff}
-h1{color:#0056d6}
+*{
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    width:100%;
+    margin:0;
+    padding:4px;
+    background:#eef5ff;
+}
+
+/* ---------------------- */
+/* GRILLE PRODUITS        */
+/* ---------------------- */
+
 .grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:4px;
 }
-button{background:#0056d6;color:white;border:none;padding:15px;border-radius:8px;cursor:pointer}
-input,select{width:100%;padding:10px;margin:5px 0}
 
 .product{
-    min-height:60px;
-    font-size:15px;
+    position:relative;
+    min-height:65px;
+    padding:8px;
+    font-size:18px;
     font-weight:600;
-    padding:5px;
-}
-
-h1{
-    color:#0056d6;
-    font-size:22px;
-    margin:5px 0;
-    text-align:center;
-}
-
-body{
-    font-family:Arial,sans-serif;
-    max-width:1000px;
-    margin:auto;
-    padding:4px;
-    background:#eef5ff;
-}
-
-#payment{
-    font-size:18px;
-    padding:8px;
-    height:50px;
-}
-
-#received{
-    font-size:18px;
-    padding:8px;
-    height:50px;
-}
-
-.change-box{
-    font-size:24px;
-    font-weight:bold;
-    text-align:center;
-    background:white;
-    padding:10px;
-    border-radius:10px;
-    margin:6px 0;
-    border:2px solid #0056d6;
-}
-
-.validate-btn{
-    width:100%;
-    font-size:30px;
-    font-weight:bold;
-    padding:22px;
-    margin-top:10px;
-    background:#28a745;
-    color:white;
-    border:none;
-    border-radius:10px;
-}
-
-.clear-btn{
-    width:100%;
-    font-size:16px;
-    padding:10px;
-    margin-top:5px;
-}
-
-.cancel-line-btn{
-    width:100%;
-    font-size:16px;
-    padding:10px;
-    margin-top:20px;
-    background:#c82333;
+    text-align:left;
+    background:#0056d6;
     color:white;
     border:none;
     border-radius:8px;
 }
 
+.product-name{
+    padding-right:45px;
+    line-height:1.2;
+}
+
+.product-price{
+    position:absolute;
+    bottom:6px;
+    right:8px;
+    font-size:16px;
+    font-weight:bold;
+}
+
+/* ---------------------- */
+/* TICKET                 */
+/* ---------------------- */
+
 .ticket-box{
-    min-height:0;
     padding:2px;
     margin:2px 0;
+    background:white;
+    border-radius:8px;
+    font-size:17px;
 }
 
 .total-box{
-    font-size:26px;
+    font-size:30px;
     font-weight:bold;
     text-align:center;
     padding:6px;
-    margin:4px 0;
+    margin:5px 0;
     background:#ff7a00;
     color:white;
     border-radius:8px;
 }
 
-.product{
-    position:relative;
-    min-height:65px;
-    font-size:18px;
-    font-weight:600;
-    text-align:left;
-    padding:8px;
+/* ---------------------- */
+/* MODES DE RÈGLEMENT     */
+/* ---------------------- */
+
+.payment-buttons{
+    display:flex;
+    width:100%;
+    gap:4px;
+    margin:8px 0;
 }
 
-.product-name{
-    padding-right:40px;
-}
-
-.product-price{
-    position:absolute;
-    bottom:8px;
-    right:8px;
-    font-size:16px;
+.payment-btn{
+    flex:1;
+    height:65px;
+    font-size:20px;
     font-weight:bold;
+    border:none;
+    border-radius:10px;
+    color:white;
 }
 
 #btnCash{
@@ -136,29 +108,80 @@ body{
 
 .payment-btn.active{
     border:3px solid white;
-    box-shadow:0 0 10px rgba(0,0,0,0.35);
+    box-shadow:0 0 8px rgba(0,0,0,0.35);
 }
+
+/* ---------------------- */
+/* PAIEMENT PARTAGÉ       */
+/* ---------------------- */
 
 #sharedPayment{
     margin-top:10px;
 }
 
 #sharedPayment label{
-    font-weight:bold;
     display:block;
     margin-top:8px;
+    font-weight:bold;
 }
 
 #cashAmount,
-#cardAmount{
+#cardAmount,
+#received{
     width:100%;
-    font-size:22px;
+    height:55px;
     padding:10px;
+    font-size:22px;
     border-radius:8px;
-    box-sizing:border-box;
 }
 
 #cardAmount{
     background:#f2f2f2;
+}
+
+/* ---------------------- */
+/* RENDU                  */
+/* ---------------------- */
+
+.change-box{
+    font-size:18px;
+    font-weight:bold;
+    text-align:center;
+    background:white;
+    padding:6px;
+    margin:5px 0;
+    border:2px solid #0056d6;
+    border-radius:8px;
+}
+
+/* ---------------------- */
+/* BOUTONS                */
+/* ---------------------- */
+
+button{
+    cursor:pointer;
+}
+
+.validate-btn{
+    width:100%;
+    padding:20px;
+    margin-top:10px;
+    font-size:30px;
+    font-weight:bold;
+    background:#28a745;
+    color:white;
+    border:none;
+    border-radius:10px;
+}
+
+.cancel-line-btn{
+    width:100%;
+    padding:10px;
+    margin-top:20px;
+    font-size:16px;
+    background:#c82333;
+    color:white;
+    border:none;
+    border-radius:8px;
 }
 
