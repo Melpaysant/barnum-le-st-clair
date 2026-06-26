@@ -147,3 +147,23 @@ function resetProducts(){
   localStorage.removeItem('products');
   location.reload();
 }
+
+function setPayment(mode){
+
+    document.getElementById("payment").value = mode;
+
+    document
+        .querySelectorAll(".payment-btn")
+        .forEach(btn => btn.classList.remove("active"));
+
+    if(mode==="Espèces")
+        document.getElementById("btnCash").classList.add("active");
+
+    if(mode==="Carte")
+        document.getElementById("btnCard").classList.add("active");
+
+    if(mode==="Partagé")
+        document.getElementById("btnShared").classList.add("active");
+
+    changePaymentMode();
+}
